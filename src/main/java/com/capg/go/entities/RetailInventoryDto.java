@@ -1,10 +1,7 @@
 package com.capg.go.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -12,7 +9,8 @@ import javax.persistence.Table;
 public class RetailInventoryDto {
 	
 	@Id
-	String inventoryId;
+	@GeneratedValue
+	private String inventoryId;
 	
 	@Column(name = "RETAILER_ID", unique = false, nullable = false)
 	private String retailerId;

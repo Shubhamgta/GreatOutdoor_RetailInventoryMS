@@ -9,9 +9,9 @@ public interface RetailerInventoryService {
 
 	 RetailInventoryDto insertItemInRetailerInventory(RetailInventoryDto inventoryDto);
 	
-	void deleteItemInRetailerInventory(RetailInventoryDto inventoryDto);
+	boolean deleteItemInRetailerInventory(RetailInventoryDto inventoryDto);
 
-	List<RetailInventoryDto> getItemListByRetailer(RetailInventoryDto inventoryDto);
+	RetailInventoryDto getItemListByRetailer(String retailerId);
 	
 	List<RetailInventoryDto> getListOfRetailers();
 }
