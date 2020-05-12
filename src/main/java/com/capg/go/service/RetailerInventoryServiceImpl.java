@@ -37,14 +37,13 @@ public class RetailerInventoryServiceImpl implements RetailerInventoryService {
 	@Override
 	public boolean deleteItemInRetailerInventory(RetailInventoryDto inventoryDto) {
 		
-		Optional<RetailInventoryDto> optional= dao.findById(inventoryDto.getRetailerId());
-		if(optional.isPresent()) {
-			RetailInventoryDto dto=optional.get();
-			dao.delete(dto);
-			return true;
+		boolean exist= dao.existsById(inventoryDto.getRetailerId());
+		if(!exist) {
+			return false;
 		}
-		throw new RetailerNotFoundExcetion("Retailer Inventory Not Found");
 		
+		dao.deleteById(inventoryDto.getRetailerId());
+		return true;
 	}
 
 	@Override
