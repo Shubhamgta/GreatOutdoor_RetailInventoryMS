@@ -10,8 +10,17 @@ public class RetailInventoryDto {
 	
 	@Id
 	@GeneratedValue
-	private String inventoryId;
+	private int inventoryId;
 	
+	
+	public int getInventoryId() {
+		return inventoryId;
+	}
+
+	public void setInventoryId(int inventoryId) {
+		this.inventoryId = inventoryId;
+	}
+
 	@Column(name = "RETAILER_ID", unique = false, nullable = false)
 	private String retailerId;
 

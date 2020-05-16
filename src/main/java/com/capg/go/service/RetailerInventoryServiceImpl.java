@@ -25,14 +25,9 @@ public class RetailerInventoryServiceImpl implements RetailerInventoryService {
 	}
 	
 	@Override
-	public RetailInventoryDto getItemListByRetailer(String retailerId){
-		Optional<RetailInventoryDto> optional=dao.findById(retailerId);
-		if(optional.isPresent()) {
-		RetailInventoryDto dto = optional.get();
-		return dto;
-		}
-		throw new RetailerNotFoundExcetion("Retailer's ID Not Found");
-
+	public List<RetailInventoryDto> getItemListByRetailer(String retailerId){
+		List<RetailInventoryDto> list =dao.findByRetailerId(retailerId);
+		return list;
 	}
 	@Override
 	public boolean deleteItemInRetailerInventory(RetailInventoryDto inventoryDto) {
@@ -50,6 +45,17 @@ public class RetailerInventoryServiceImpl implements RetailerInventoryService {
 	public RetailInventoryDto insertItemInRetailerInventory(RetailInventoryDto inventoryDto) {
 		RetailInventoryDto dto=dao.save(inventoryDto);
 		return dto;
+	}
+	@Override
+	public List<RetailInventoryDto> getSoldItemDetails(String retailerId){
+		List<RetailInventoryDto> list=dao.getSoldItemDetails(retailerId);
+		return list;
+		
+	}
+	@Override
+	public List<RetailInventoryDto> getDelieveredItemDetails(String retailerId){
+		List<RetailInventoryDto> list=dao.getDelieveredItemDetails(retailerId);
+		return list;
 	}
 
 

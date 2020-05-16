@@ -11,7 +11,11 @@ public interface RetailerInventoryService {
 	
 	boolean deleteItemInRetailerInventory(RetailInventoryDto inventoryDto);
 
-	RetailInventoryDto getItemListByRetailer(String retailerId);
+	List<RetailInventoryDto> getItemListByRetailer(String retailerId);
 	
 	List<RetailInventoryDto> getListOfRetailers();
+
+	List<RetailInventoryDto> getSoldItemDetails(String retailerId);
+	
+	List<RetailInventoryDto> getDelieveredItemDetails(String retailerId);
 }
