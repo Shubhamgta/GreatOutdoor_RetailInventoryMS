@@ -1,13 +1,12 @@
-package org.cap.empmgt;
+package com.capg.go;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmployeeManagementApplicationTests {
+class RetailerInventoryMsApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-
 }
