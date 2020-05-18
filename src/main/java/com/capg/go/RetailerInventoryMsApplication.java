@@ -1,4 +1,4 @@
-package com.capg.go.RetailerInventoryMS;
+package com.capg.go;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

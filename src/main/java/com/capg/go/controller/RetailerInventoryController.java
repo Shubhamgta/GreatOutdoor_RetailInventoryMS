@@ -1,14 +1,21 @@
 package com.capg.go.controller;
 
+
 import java.util.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.capg.go.bean.RetailerInventoryBean;
+
 import com.capg.go.entities.RetailInventoryDto;
 import com.capg.go.service.RetailerInventoryService;
+
+
+
+
+
+
 
 
 @RestController
@@ -40,7 +47,7 @@ public class RetailerInventoryController {
 	}
 	
 	
-	@GetMapping
+	@GetMapping("/all")
 	public ResponseEntity<List<RetailInventoryDto>>getInventories(){
 		List<RetailInventoryDto> list= service.getListOfRetailers();
 		ResponseEntity<List<RetailInventoryDto>> response=new ResponseEntity<>(list,HttpStatus.OK);

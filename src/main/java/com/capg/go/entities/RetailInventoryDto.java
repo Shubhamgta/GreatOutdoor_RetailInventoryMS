@@ -1,6 +1,8 @@
 package com.capg.go.entities;
 
 
+import java.util.Calendar;
+
 import javax.persistence.*;
 
 
@@ -30,6 +32,24 @@ public class RetailInventoryDto {
 	
 	@Column(name = "PRODUCT_UIN", unique = true, nullable = false)
 	private String productUniqueId;
+	private Calendar productSaleTimeStamp;
+	private Calendar productRecieveTimeStamp;
+
+	public Calendar getProductSaleTimeStamp() {
+		return productSaleTimeStamp;
+	}
+
+	public void setProductSaleTimeStamp(Calendar productSaleTimeStamp) {
+		this.productSaleTimeStamp = productSaleTimeStamp;
+	}
+
+	public Calendar getProductRecieveTimeStamp() {
+		return productRecieveTimeStamp;
+	}
+
+	public void setProductRecieveTimeStamp(Calendar productRecieveTimeStamp) {
+		this.productRecieveTimeStamp = productRecieveTimeStamp;
+	}
 
 	public String getRetailerId() {
 		return retailerId;
@@ -58,10 +78,13 @@ public class RetailInventoryDto {
 
 	}
 
-	public RetailInventoryDto(String retailerId, byte productCategory, String productUniqueId) {
+	public RetailInventoryDto(String retailerId, byte productCategory, String productUniqueId,
+			Calendar productSaleTimeStamp,Calendar productRecieveTimeStamp) {
 		this.retailerId = retailerId;
 		this.productCategory = productCategory;
 		this.productUniqueId = productUniqueId;
+		this.productSaleTimeStamp= productSaleTimeStamp;
+		this.productRecieveTimeStamp= productRecieveTimeStamp;
 		
 	}
 
