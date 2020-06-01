@@ -30,21 +30,21 @@ public class RetailerInventoryServiceImpl implements RetailerInventoryService {
 		return list;
 	}
 	@Override
-	public boolean deleteItemInRetailerInventory(RetailInventoryDto inventoryDto) {
+	public boolean deleteItemInRetailerInventory(RetailInventoryDto inventoryEntity) {
 		
-		boolean exist= dao.existsById(inventoryDto.getRetailerId());
+		boolean exist= dao.existsById(inventoryEntity.getRetailerId());
 		if(!exist) {
 			return false;
 		}
 		
-		dao.deleteById(inventoryDto.getRetailerId());
+		dao.deleteById(inventoryEntity.getRetailerId());
 		return true;
 	}
 
 	@Override
-	public RetailInventoryDto insertItemInRetailerInventory(RetailInventoryDto inventoryDto) {
-		RetailInventoryDto dto=dao.save(inventoryDto);
-		return dto;
+	public RetailInventoryDto insertItemInRetailerInventory(RetailInventoryDto inventoryEntity) {
+		RetailInventoryDto entity=dao.save(inventoryEntity);
+		return entity;
 	}
 	@Override
 	public List<RetailInventoryDto> getSoldItemDetails(String retailerId){
